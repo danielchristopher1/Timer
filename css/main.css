@@ -1,0 +1,24 @@
+div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'MyriadPro-Light'; /*a name to be used later*/
+  src: url('../fonts/MyriadPro-Light.otf'); /*URL to font*/
+}
+
+h {
+  font-size: 48;
+  font-family: 'MyriadPro-Light';
+  color: #c1c1c1;
+}
+
+p {
+  font-size: 48;
+  font-family: 'MyriadPro-Light';
+  color: #1c1c1c;
+}

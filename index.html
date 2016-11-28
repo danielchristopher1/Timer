@@ -1,0 +1,23 @@
+<hmtl>
+
+  <head>
+  </head>
+
+  <body>
+    <div>
+      <input id="picker" class="flatpickr" type="text" placeholder="Select Date..">
+      <a id="save" href="main">Set Birthdate</a>
+    </div>
+  </body>
+
+  <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+  <script src="https://unpkg.com/flatpickr"></script>
+
+  <script>
+    document.getElementById("picker").flatpickr({
+      onChange: function(selectedDates, dateStr, instance) {
+        localStorage.setItem("bday", selectedDates[0].toString());
+      },
+    })
+  </script>
+</html>

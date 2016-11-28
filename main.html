@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+
+  <body>
+    <div id="time_left_div">
+      <h>Time to change the world:</h>
+      <p id="time_left"></p>
+    </div>
+  </body>
+
+  <script>
+    var maxAge = 100
+    var birthdate = new Date(localStorage.getItem("bday"))
+    var deathdate = birthdate;
+    deathdate.setFullYear(birthdate.getFullYear() + maxAge)
+
+    var end = new Date();
+    setInterval(function() {
+      var a = new Date
+          , b = deathdate - new Date()
+          , c = b / 315569e5
+          , d = c.toFixed(9).toString()
+
+      document.getElementById('time_left').innerHTML = d + " years"
+    }, 100)
+
+  </script>
+</html>
