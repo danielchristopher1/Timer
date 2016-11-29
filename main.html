@@ -5,12 +5,13 @@
 
   <body>
     <div id="time_left_div">
-      <h>Time to change the world:</h>
+      <h>Time left to change the world:</h>
       <p id="time_left"></p>
     </div>
   </body>
 
   <script>
+    window.document.title = "Time Left"
     var maxAge = 100
     var birthdate = new Date(localStorage.getItem("bday"))
     var deathdate = birthdate;
