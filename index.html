@@ -1,6 +1,7 @@
 <hmtl>
 
   <head>
+    <title>Time Left</title>
   </head>
 
   <body>
@@ -12,13 +13,18 @@
 
   <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
   <script src="https://unpkg.com/flatpickr"></script>
+  <script src="./js/store.js"></script>
 
   <script>
-    window.document.title = "Time Left"
-    document.getElementById("picker").flatpickr({
-      onChange: function(selectedDates, dateStr, instance) {
-        localStorage.setItem("bday", selectedDates[0].toString());
-      },
-    })
+    if (!store.enabled) {
+      alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
+    }
+    else {
+      document.getElementById("picker").flatpickr({
+        onChange: function(selectedDates, dateStr, instance) {
+          store.set('bday', selectedDates[0].toString())
+        },
+      })
+    }
   </script>
 </html>

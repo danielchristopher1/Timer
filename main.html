@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./css/main.css">
+    <title>Time Left</title>
   </head>
 
   <body>
@@ -10,22 +11,27 @@
     </div>
   </body>
 
+  <script src="./js/store.js"></script>
+
   <script>
-    window.document.title = "Time Left"
-    var maxAge = 100
-    var birthdate = new Date(localStorage.getItem("bday"))
-    var deathdate = birthdate;
-    deathdate.setFullYear(birthdate.getFullYear() + maxAge)
+    if (!store.enabled) {
+      alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
+    }
+    else {
+      var maxAge = 100
+      var birthdate = new Date(store.get('bday'))
+      var deathdate = birthdate;
+      deathdate.setFullYear(birthdate.getFullYear() + maxAge)
 
-    var end = new Date();
-    setInterval(function() {
-      var a = new Date
-          , b = deathdate - new Date()
-          , c = b / 315569e5
-          , d = c.toFixed(9).toString()
+      var end = new Date();
+      setInterval(function() {
+        var a = new Date
+            , b = deathdate - new Date()
+            , c = b / 315569e5
+            , d = c.toFixed(9).toString()
 
-      document.getElementById('time_left').innerHTML = d + " years"
-    }, 100)
-
+        document.getElementById('time_left').innerHTML = d + " years"
+      }, 100)
+    }
   </script>
 </html>
