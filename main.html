@@ -19,7 +19,8 @@
     }
     else {
       var birthdate = new Date(store.get('bday'))
-      if store.get('bday') != null {
+
+      if (birthdate != null) {
         var maxAge = 80
         var deathdate = birthdate;
         deathdate.setFullYear(birthdate.getFullYear() + maxAge)
@@ -32,7 +33,7 @@
               , d = c.toFixed(9).toString()
 
           document.getElementById('time_left').innerHTML = d + " years"
-        }, 100)  
+        }, 100)
       }
     }
   </script>
